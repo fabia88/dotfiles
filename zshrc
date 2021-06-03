@@ -11,6 +11,7 @@ plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting
 export HOMEBREW_NO_ANALYTICS=1
 
 # Actually load Oh-My-Zsh
+ZSH_DISABLE_COMPFIX="true"
 source "${ZSH}/oh-my-zsh.sh"
 
 # Load rbenv if installed
@@ -28,11 +29,17 @@ export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
 # Encoding stuff for the terminal
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
+export BUNDLER_EDITOR="code --new-window"
 export PATH="/usr/local/opt/node@8/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
-export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
-export BUNDLER_EDITOR="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
+
+# export PATH="$PATH:/usr/local/opt/mysql@5.7/bin"
+
+# setup rbenv in your terminal
+#
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+eval "$(rbenv init -)"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
